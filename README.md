@@ -1,3 +1,6 @@
+Try it now, click here:
+https://rogerplaballus.github.io/Password-Generator-JS/
+
 Password Generator made with HTML, CSS and JavaScript. How does it work?
 
 ![demo](https://github.com/user-attachments/assets/18940000-0f72-49a1-bcb6-d1edd6bd7ac0)
