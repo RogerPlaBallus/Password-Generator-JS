@@ -2,7 +2,7 @@ Try it now, click here:
 https://rogerplaballus.github.io/Password-Generator-JS/
 
 Password Generator made with HTML, CSS and JavaScript. How does it work?
-1. Generates random 12-character passwords.
+1. Generates random passwords.
 2. Combines lenght, uppercase, lowercase, numbers, and symbols.
 3. Displays the password in an input box.
 4. Allows copying the password to the clipboard.
