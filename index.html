@@ -7,17 +7,103 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>Generate a <br><span>Random Password</span></h1>
-    <div class="display">
-        <input type="text" id="password" placeholder="Password">
-        <img src="images/copy.png" onclick="copyPassword()">
+    <div class="container">
+        <h1>Generate a <br><span>Random Password</span></h1>
+        
+        <!-- Main Section: Strength Checks + Password Box -->
+        <div class="main-content">
+            <!-- Strength Checks (Left Side) -->
+            <div class="strength-checks">
+                <h3>Requirements</h3>
+                <div class="checks-list">
+                    <div class="check-item">
+                        <span id="check-length" class="check-icon">❌</span>
+                        <span>At least 8 characters</span>
+                    </div>
+                    <div class="check-item">
+                        <span id="check-uppercase" class="check-icon">❌</span>
+                        <span>Uppercase letters (A-Z)</span>
+                    </div>
+                    <div class="check-item">
+                        <span id="check-lowercase" class="check-icon">❌</span>
+                        <span>Lowercase letters (a-z)</span>
+                    </div>
+                    <div class="check-item">
+                        <span id="check-numbers" class="check-icon">❌</span>
+                        <span>Numbers (0-9)</span>
+                    </div>
+                    <div class="check-item">
+                        <span id="check-symbols" class="check-icon">❌</span>
+                        <span>Special symbols (!@#$%...)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password Display with Strength Indicator (Right Side) -->
+            <div class="password-section">
+                <div class="display-section">
+                    <div class="password-box">
+                        <input type="text" id="password" placeholder="Password" readonly>
+                        <img src="images/copy.png" onclick="copyPassword()" alt="Copy" title="Copy to clipboard">
+                    </div>
+                    
+                    <div class="strength-indicator">
+                        <div class="strength-bar">
+                            <div id="strengthFill" class="strength-fill"></div>
+                        </div>
+                        <div class="strength-text" id="strengthText">No password</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Password Options -->
+        <div class="options">
+            <div class="options-grid">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="checkmark"></span>
+                    <span>Uppercase (A-Z)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="checkmark"></span>
+                    <span>Lowercase (a-z)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="checkmark"></span>
+                    <span>Numbers (0-9)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="checkmark"></span>
+                    <span>Symbols (!@#...)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="excludeSimilar">
+                    <span class="checkmark"></span>
+                    <span>Exclude Similar</span>
+                </label>
+            </div>
+
+            <!-- Slider -->
+            <div class="slider-container">
+                <div class="slider-header">
+                    <label for="lengthSlider">Password Length</label>
+                    <span id="lengthValue">12</span>
+                </div>
+                <input type="range" id="lengthSlider" min="4" max="50" value="12">
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button class="generate-btn" onclick="createPassword()">
+            <img src="images/generate.png" alt="Generate">
+            Generate Password
+        </button>
     </div>
-    <button onclick="createPassword()"><img src="images/generate.png">Generate Password</button>
-</div>
 
-<script src="script.js"></script>
-
-
+    <script src="script.js"></script>
 </body>
 </html>
